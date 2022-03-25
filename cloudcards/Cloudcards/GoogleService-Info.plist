@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>943980742096-7569hagocqs8r75grrfab12upe4gfpte.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.943980742096-7569hagocqs8r75grrfab12upe4gfpte</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC_jmwNZP5q9-4jCqciLfPIs53hj5U985s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>943980742096</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.silvia.cloudcards</string>
+	<key>PROJECT_ID</key>
+	<string>cloudcards-3bc51</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cloudcards-3bc51.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:943980742096:ios:d5b77804b2ba2c38dfa5d5</string>
+</dict>
+</plist>
