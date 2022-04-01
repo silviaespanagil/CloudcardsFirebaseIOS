@@ -79,7 +79,9 @@ struct CardView: View {
     var backView: some View {
         
         VStack {
+            
             Spacer()
+            
             HStack {
                 
                 Text(viewModel.card.answer)
@@ -93,9 +95,13 @@ struct CardView: View {
             Spacer()
             
             HStack(spacing: 40) {
+                
                 Spacer()
+                
                 ThumbsButton(systemNameImage: "hand.thumbsdown.fill", backgroundColor: Color.red, buttonAction: test)
+                
                 ThumbsButton(systemNameImage: "hand.thumbsup.fill", backgroundColor: Color.green, buttonAction: test)
+                
                 Spacer()
             }
             Spacer()
