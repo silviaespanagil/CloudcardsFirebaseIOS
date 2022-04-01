@@ -37,4 +37,14 @@ class CardRepository: ObservableObject {
                 } ?? []
             }
     }
+    
+    func add(_ card: Card) {
+        
+        do {
+            
+            _ = try store.collection(path).addDocument(from: card)
+        } catch {
+            fatalError("Enable to add card: \(error.localizedDescription)")
+        }
+    }
 }
