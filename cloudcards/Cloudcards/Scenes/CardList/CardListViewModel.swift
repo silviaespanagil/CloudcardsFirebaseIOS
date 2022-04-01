@@ -22,5 +22,9 @@ class CardListViewModel: ObservableObject {
             }
         }.assign(to: &$cardViewModels)
     }
+    func addCard(_ card: Card) {
+        
+        cardRepository.add(card)
+    }
 }
     
