@@ -13,8 +13,8 @@
 		A75990A327F5FEF90046E9A2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A227F5FEF90046E9A2 /* CardViewModel.swift */; };
 		A75990A527F5FF0D0046E9A2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A427F5FF0D0046E9A2 /* CardView.swift */; };
 		A75990A727F6DEDE0046E9A2 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A627F6DEDE0046E9A2 /* CardListView.swift */; };
+		A75990AA27F733ED0046E9A2 /* ThumbsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A927F733ED0046E9A2 /* ThumbsButton.swift */; };
 		A767960127EE16900031C694 /* CloudcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767960027EE16900031C694 /* CloudcardsApp.swift */; };
-		A767960327EE16900031C694 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767960227EE16900031C694 /* ContentView.swift */; };
 		A767960527EE16920031C694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A767960427EE16920031C694 /* Assets.xcassets */; };
 		A767960827EE16920031C694 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A767960727EE16920031C694 /* Preview Assets.xcassets */; };
 		A767960F27EE17230031C694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A767960E27EE17230031C694 /* GoogleService-Info.plist */; };
@@ -30,9 +30,9 @@
 		A75990A227F5FEF90046E9A2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		A75990A427F5FF0D0046E9A2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A75990A627F6DEDE0046E9A2 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		A75990A927F733ED0046E9A2 /* ThumbsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbsButton.swift; sourceTree = "<group>"; };
 		A76795FD27EE16900031C694 /* Cloudcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A767960027EE16900031C694 /* CloudcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudcardsApp.swift; sourceTree = "<group>"; };
-		A767960227EE16900031C694 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A767960427EE16920031C694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A767960727EE16920031C694 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A767960E27EE17230031C694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -95,6 +95,14 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
+		A75990A827F733DA0046E9A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A75990A927F733ED0046E9A2 /* ThumbsButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		A76795F427EE16900031C694 = {
 			isa = PBXGroup;
 			children = (
@@ -114,11 +122,11 @@
 		A76795FF27EE16900031C694 /* Cloudcards */ = {
 			isa = PBXGroup;
 			children = (
+				A75990A827F733DA0046E9A2 /* View */,
 				A759909B27F5FA270046E9A2 /* Scenes */,
 				A759909827F5F90F0046E9A2 /* Entities */,
 				A759909527F5F74F0046E9A2 /* Repositories */,
 				A767960027EE16900031C694 /* CloudcardsApp.swift */,
-				A767960227EE16900031C694 /* ContentView.swift */,
 				A767960427EE16920031C694 /* Assets.xcassets */,
 				A767960E27EE17230031C694 /* GoogleService-Info.plist */,
 				A767960627EE16920031C694 /* Preview Content */,
@@ -215,9 +223,9 @@
 			files = (
 				A75990A527F5FF0D0046E9A2 /* CardView.swift in Sources */,
 				A759909E27F5FA7E0046E9A2 /* CardListViewModel.swift in Sources */,
-				A767960327EE16900031C694 /* ContentView.swift in Sources */,
 				A75990A327F5FEF90046E9A2 /* CardViewModel.swift in Sources */,
 				A759909727F5F7610046E9A2 /* CardRepository.swift in Sources */,
+				A75990AA27F733ED0046E9A2 /* ThumbsButton.swift in Sources */,
 				A767960127EE16900031C694 /* CloudcardsApp.swift in Sources */,
 				A75990A727F6DEDE0046E9A2 /* CardListView.swift in Sources */,
 				A759909A27F5F91C0046E9A2 /* Cards.swift in Sources */,
