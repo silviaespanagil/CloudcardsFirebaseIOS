@@ -10,21 +10,38 @@ import SwiftUI
 struct CardListView: View {
     
     @ObservedObject var viewModel: CardListViewModel
-
+    
+    @State var showForm = false
+    
     var body: some View {
-
-                    VStack {
-                        
-                        ForEach(viewModel.cardViewModels) { cardViewModel in
-                            CardView(viewModel: cardViewModel)
-                                .padding([.vertical])
-                        
-                            Spacer()
-                        }
-                    }
-            .navigationTitle("Tolkien trivia")
-            .navigationBarTitleDisplayMode(.inline)
-
+        
+        VStack {
+            
+            ForEach(viewModel.cardViewModels) { cardViewModel in
+                CardView(viewModel: cardViewModel)
+                    .padding([.vertical])
+                
+                Spacer()
+            }
+        }
+        .sheet(isPresented: $showForm) {
+            NewCardForm(cardListViewModel: CardListViewModel())
+          }
+        .navigationTitle("Tolkien trivia")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Button {
+                    
+                    showForm.toggle()
+                } label: {
+                    
+                    Image(systemName: "plus")
+                }
+            }
+        }
     }
 }
 
