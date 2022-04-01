@@ -7,14 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A759909727F5F7610046E9A2 /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759909627F5F7610046E9A2 /* CardRepository.swift */; };
+		A759909A27F5F91C0046E9A2 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759909927F5F91B0046E9A2 /* Cards.swift */; };
+		A759909E27F5FA7E0046E9A2 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759909D27F5FA7E0046E9A2 /* CardListViewModel.swift */; };
+		A75990A327F5FEF90046E9A2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A227F5FEF90046E9A2 /* CardViewModel.swift */; };
+		A75990A527F5FF0D0046E9A2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A427F5FF0D0046E9A2 /* CardView.swift */; };
+		A75990A727F6DEDE0046E9A2 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75990A627F6DEDE0046E9A2 /* CardListView.swift */; };
 		A767960127EE16900031C694 /* CloudcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767960027EE16900031C694 /* CloudcardsApp.swift */; };
 		A767960327EE16900031C694 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A767960227EE16900031C694 /* ContentView.swift */; };
 		A767960527EE16920031C694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A767960427EE16920031C694 /* Assets.xcassets */; };
 		A767960827EE16920031C694 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A767960727EE16920031C694 /* Preview Assets.xcassets */; };
 		A767960F27EE17230031C694 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A767960E27EE17230031C694 /* GoogleService-Info.plist */; };
+		A767961227EE29500031C694 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A767961127EE29500031C694 /* FirebaseAuth */; };
+		A767961427EE29500031C694 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A767961327EE29500031C694 /* FirebaseFirestore */; };
+		A767961627EE29500031C694 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A767961527EE29500031C694 /* FirebaseFirestoreSwift-Beta */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A759909627F5F7610046E9A2 /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
+		A759909927F5F91B0046E9A2 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		A759909D27F5FA7E0046E9A2 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
+		A75990A227F5FEF90046E9A2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		A75990A427F5FF0D0046E9A2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A75990A627F6DEDE0046E9A2 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		A76795FD27EE16900031C694 /* Cloudcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A767960027EE16900031C694 /* CloudcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudcardsApp.swift; sourceTree = "<group>"; };
 		A767960227EE16900031C694 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,12 +43,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A767961627EE29500031C694 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				A767961227EE29500031C694 /* FirebaseAuth in Frameworks */,
+				A767961427EE29500031C694 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A759909527F5F74F0046E9A2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A759909627F5F7610046E9A2 /* CardRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A759909827F5F90F0046E9A2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A759909927F5F91B0046E9A2 /* Cards.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A759909B27F5FA270046E9A2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A759909F27F5FED40046E9A2 /* CardView */,
+				A759909C27F5FA350046E9A2 /* CardList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A759909C27F5FA350046E9A2 /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				A759909D27F5FA7E0046E9A2 /* CardListViewModel.swift */,
+				A75990A627F6DEDE0046E9A2 /* CardListView.swift */,
+			);
+			path = CardList;
+			sourceTree = "<group>";
+		};
+		A759909F27F5FED40046E9A2 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				A75990A227F5FEF90046E9A2 /* CardViewModel.swift */,
+				A75990A427F5FF0D0046E9A2 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
 		A76795F427EE16900031C694 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +114,9 @@
 		A76795FF27EE16900031C694 /* Cloudcards */ = {
 			isa = PBXGroup;
 			children = (
+				A759909B27F5FA270046E9A2 /* Scenes */,
+				A759909827F5F90F0046E9A2 /* Entities */,
+				A759909527F5F74F0046E9A2 /* Repositories */,
 				A767960027EE16900031C694 /* CloudcardsApp.swift */,
 				A767960227EE16900031C694 /* ContentView.swift */,
 				A767960427EE16920031C694 /* Assets.xcassets */,
@@ -86,6 +150,11 @@
 			dependencies = (
 			);
 			name = Cloudcards;
+			packageProductDependencies = (
+				A767961127EE29500031C694 /* FirebaseAuth */,
+				A767961327EE29500031C694 /* FirebaseFirestore */,
+				A767961527EE29500031C694 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = cloudcards;
 			productReference = A76795FD27EE16900031C694 /* Cloudcards.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +183,9 @@
 				Base,
 			);
 			mainGroup = A76795F427EE16900031C694;
+			packageReferences = (
+				A767961027EE294F0031C694 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = A76795FE27EE16900031C694 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,8 +213,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75990A527F5FF0D0046E9A2 /* CardView.swift in Sources */,
+				A759909E27F5FA7E0046E9A2 /* CardListViewModel.swift in Sources */,
 				A767960327EE16900031C694 /* ContentView.swift in Sources */,
+				A75990A327F5FEF90046E9A2 /* CardViewModel.swift in Sources */,
+				A759909727F5F7610046E9A2 /* CardRepository.swift in Sources */,
 				A767960127EE16900031C694 /* CloudcardsApp.swift in Sources */,
+				A75990A727F6DEDE0046E9A2 /* CardListView.swift in Sources */,
+				A759909A27F5F91C0046E9A2 /* Cards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +365,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = silvia.cloudcards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silvia.cloudcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,7 +395,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = silvia.cloudcards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silvia.cloudcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -347,6 +425,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A767961027EE294F0031C694 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A767961127EE29500031C694 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A767961027EE294F0031C694 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A767961327EE29500031C694 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A767961027EE294F0031C694 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		A767961527EE29500031C694 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A767961027EE294F0031C694 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A76795F527EE16900031C694 /* Project object */;
 }
