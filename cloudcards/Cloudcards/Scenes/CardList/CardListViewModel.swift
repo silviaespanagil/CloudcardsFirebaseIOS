@@ -18,7 +18,7 @@ class CardListViewModel: ObservableObject {
             
             cards.map { card in
                 
-                CardViewModel(card: card)
+                CardViewModel(card: card, cardRepository: self.cardRepository)
             }
         }.assign(to: &$cardViewModels)
     }
