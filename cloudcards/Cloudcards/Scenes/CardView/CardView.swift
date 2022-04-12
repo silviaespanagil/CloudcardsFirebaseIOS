@@ -48,6 +48,27 @@ struct CardView: View {
                 viewModel.showContent.toggle()
             }
         }
+        .onLongPressGesture {
+            withAnimation {
+                viewModel.showAlert = true
+                viewModel.deleteCard = true
+            }
+        }
+        .alert(isPresented: $viewModel.showAlert) {
+            
+            Alert(title: Text("Remove card"), message: Text("Are you sure you want to remove this card? You won't be able to retrieve it again."),
+                  primaryButton: .destructive(Text("Remove")) {
+                withAnimation {
+                    
+                    viewModel.remove()
+                }
+            }, secondaryButton: .cancel() {
+                withAnimation {
+                    
+                    viewModel.deleteCard = false
+                }
+            })
+        }
     }
     
     var frontView: some View {
@@ -123,9 +144,9 @@ struct CardView: View {
                     .clipShape(Circle())
             }
                 
-//                ThumbsButton(systemNameImage: "hand.thumbsdown.fill", backgroundColor: Color.red, buttonAction: viewModel.success(false))
-//
-//                ThumbsButton(systemNameImage: "hand.thumbsup.fill", backgroundColor: Color.green, buttonAction: viewModel.success(true))
+                //                ThumbsButton(systemNameImage: "hand.thumbsdown.fill", backgroundColor: Color.red, buttonAction: viewModel.success(false))
+                //
+                //                ThumbsButton(systemNameImage: "hand.thumbsup.fill", backgroundColor: Color.green, buttonAction: viewModel.success(true))
                 
                 Spacer()
             }
