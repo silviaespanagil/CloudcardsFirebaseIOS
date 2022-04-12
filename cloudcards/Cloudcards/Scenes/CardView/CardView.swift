@@ -11,7 +11,6 @@ struct CardView: View {
     
     @ObservedObject var viewModel: CardViewModel
     
-    @State var showContent = false
     @State var testAction = false
     func test() {
         testAction.toggle()
@@ -22,14 +21,14 @@ struct CardView: View {
         
         ZStack {
             
-            backView.opacity(showContent ? 1 : 0)
-            frontView.opacity(showContent ? 0 : 1)
+            backView.opacity(viewModel.showContent ? 1 : 0)
+            frontView.opacity(viewModel.showContent ? 0 : 1)
         }
         .frame(width: 250, height: 200)
         .background(
             ZStack {
                 
-                showContent
+                viewModel.showContent
                 ? Color(.gray)
                 : Color(.blue)
                 
@@ -41,11 +40,12 @@ struct CardView: View {
             }
         )
         .cornerRadius(20)
-        .rotation3DEffect(.degrees(showContent ? 180.0 : 0.0), axis: (x: 0, y: -1, z: 0))
+        .rotation3DEffect(.degrees(viewModel.showContent ? 180.0 : 0.0), axis: (x: 0, y: -1, z: 0))
         .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
+        .contentShape(Rectangle())
         .onTapGesture {
             withAnimation {
-                showContent.toggle()
+                viewModel.showContent.toggle()
             }
         }
     }
@@ -98,9 +98,34 @@ struct CardView: View {
                 
                 Spacer()
                 
-                ThumbsButton(systemNameImage: "hand.thumbsdown.fill", backgroundColor: Color.red, buttonAction: test)
+                Button {
+                    viewModel.success(false)
+                }
+            label: {
                 
-                ThumbsButton(systemNameImage: "hand.thumbsup.fill", backgroundColor: Color.green, buttonAction: test)
+                Image(systemName: "hand.thumbsdown.fill")
+                    .padding()
+                    .background(Color.red)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+            }
+                Button {
+                    viewModel.success(true)
+                }
+            label: {
+                
+                Image(systemName: "hand.thumbsup.fill")
+                    .padding()
+                    .background(Color.green)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+            }
+                
+//                ThumbsButton(systemNameImage: "hand.thumbsdown.fill", backgroundColor: Color.red, buttonAction: viewModel.success(false))
+//
+//                ThumbsButton(systemNameImage: "hand.thumbsup.fill", backgroundColor: Color.green, buttonAction: viewModel.success(true))
                 
                 Spacer()
             }
