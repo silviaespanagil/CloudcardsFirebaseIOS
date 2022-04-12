@@ -16,11 +16,13 @@ struct CardListView: View {
     var body: some View {
         
         VStack {
-            
+            ScrollView(showsIndicators: false) {
+                
             ForEach(viewModel.cardViewModels) { cardViewModel in
+                
                 CardView(viewModel: cardViewModel)
                     .padding([.vertical])
-                
+                }
                 Spacer()
             }
         }
