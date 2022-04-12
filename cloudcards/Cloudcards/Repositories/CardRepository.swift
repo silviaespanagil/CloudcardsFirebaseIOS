@@ -42,9 +42,22 @@ class CardRepository: ObservableObject {
         
         do {
             
-            _ = try store.collection(path).addDocument(from: card)
+            _ = try store.collection(path).addDocument(from: card).setData(from: card)
         } catch {
-            fatalError("Enable to add card: \(error.localizedDescription)")
+            fatalError("Unable to add card: \(error.localizedDescription)")
+        }
+    }
+    
+    func updateCard(_ card: Card) {
+        
+        guard let cardId = card.id else { return }
+        
+        do {
+            
+            try store.collection(path).document(cardId).setData(from: card)
+        } catch {
+            
+            fatalError("Unable to add card: \(error.localizedDescription)")
         }
     }
 }
