@@ -11,9 +11,9 @@ struct ThumbsButton: View {
     
     var systemNameImage: String
     var backgroundColor: Color
-    var buttonAction: () -> Void
+    var buttonAction: ()
     
-    init(systemNameImage: String, backgroundColor: Color, buttonAction: @escaping () -> Void) {
+    init(systemNameImage: String, backgroundColor: Color, buttonAction: ()) {
         
         self.systemNameImage = systemNameImage
         self.backgroundColor = backgroundColor
@@ -23,7 +23,7 @@ struct ThumbsButton: View {
     var body: some View {
         
         Button {
-            buttonAction()
+            buttonAction
         }
     label: {
         
