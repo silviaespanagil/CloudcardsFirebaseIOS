@@ -12,6 +12,8 @@ class CardViewModel: ObservableObject, Identifiable {
     
     @Published var card: Card
     @Published var showContent = false
+    @Published var deleteCard = false
+    @Published var showAlert = false
     
     private var cardRepository: CardRepository
     private var cancellables: Set<AnyCancellable> = []
@@ -40,5 +42,10 @@ class CardViewModel: ObservableObject, Identifiable {
         updatedCard.successful = successful
         update(card: updatedCard)
         showContent.toggle()
+    }
+    
+    func remove() {
+        
+        cardRepository.remove(card)
     }
 }

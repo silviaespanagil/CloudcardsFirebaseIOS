@@ -60,4 +60,15 @@ class CardRepository: ObservableObject {
             fatalError("Unable to add card: \(error.localizedDescription)")
         }
     }
+    
+    func remove(_ card: Card) {
+        
+        guard let cardId = card.id else { return }
+        store.collection(path).document(cardId).delete() { error in
+            if let error = error {
+                
+                print("Unable to remove card: \(error.localizedDescription)")
+            }
+        }
+    }
 }
