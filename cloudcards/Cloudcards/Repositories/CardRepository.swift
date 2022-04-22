@@ -15,14 +15,32 @@ class CardRepository: ObservableObject {
     private let path = "cards"
     @Published var cards: [Card] = []
     
+    var userId = ""
+    private let authenticationService = AuthenticationService()
+    private var cancellables: Set<AnyCancellable> = []
+    
     init() {
         
-        getCards()
+        authenticationService.$user
+            .compactMap { user in
+                user?.uid
+            }
+            .assign(to: \.userId, on: self)
+            .store(in: &cancellables)
+        
+        authenticationService.$user
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+              
+                self?.getCards()
+            }
+            .store(in: &cancellables)
     }
     
     func getCards() {
         
         store.collection(path)
+            .whereField("userId", isEqualTo: userId)
             .addSnapshotListener { querySnapshot, error in
                 
                 if let error = error {
@@ -42,7 +60,10 @@ class CardRepository: ObservableObject {
         
         do {
             
-            _ = try store.collection(path).addDocument(from: card).setData(from: card)
+            var newCard = card
+            newCard.userId = userId
+            
+            _ = try store.collection(path).addDocument(from: newCard).setData(from: newCard)
         } catch {
             fatalError("Unable to add card: \(error.localizedDescription)")
         }
