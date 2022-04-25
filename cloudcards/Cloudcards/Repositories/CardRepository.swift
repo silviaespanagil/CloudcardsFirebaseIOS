@@ -16,10 +16,12 @@ class CardRepository: ObservableObject {
     @Published var cards: [Card] = []
     
     var userId = ""
-    private let authenticationService = AuthenticationService()
+    private let authenticationService: AuthenticationService
     private var cancellables: Set<AnyCancellable> = []
     
-    init() {
+    init(authenticationService: AuthenticationService) {
+        
+        self.authenticationService = authenticationService
         
         authenticationService.$user
             .compactMap { user in

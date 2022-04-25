@@ -7,13 +7,26 @@
 
 import Foundation
 import Combine
+import Firebase
 
 class CardListViewModel: ObservableObject {
     
     @Published var cardViewModels: [CardViewModel] = []
-    @Published var cardRepository = CardRepository()
+    @Published var cardRepository: CardRepository
+    @Published var user: User?
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    let authenticationService = AuthenticationService()
     
     init() {
+        
+        cardRepository = CardRepository(authenticationService: authenticationService)
+        
+        authenticationService.$user
+            .assign(to: \.user, on: self)
+            .store(in: &cancellables)
+        
         cardRepository.$cards.map { cards in
             
             cards.map { card in

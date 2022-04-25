@@ -23,6 +23,8 @@
 		A767961227EE29500031C694 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A767961127EE29500031C694 /* FirebaseAuth */; };
 		A767961427EE29500031C694 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A767961327EE29500031C694 /* FirebaseFirestore */; };
 		A767961627EE29500031C694 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A767961527EE29500031C694 /* FirebaseFirestoreSwift-Beta */; };
+		A784CFAD28169324006D9D14 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784CFAC28169324006D9D14 /* LoginView.swift */; };
+		A784CFAF28169577006D9D14 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784CFAE28169577006D9D14 /* LoginButton.swift */; };
 		A7FD10102812A932002F172F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD100F2812A932002F172F /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		A767960427EE16920031C694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A767960727EE16920031C694 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A767960E27EE17230031C694 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A784CFAC28169324006D9D14 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A784CFAE28169577006D9D14 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		A7FD100F2812A932002F172F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,7 @@
 		A759909B27F5FA270046E9A2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A784CFAB2816930F006D9D14 /* Login */,
 				A75990AB27F73EA20046E9A2 /* NewCardForm */,
 				A759909F27F5FED40046E9A2 /* CardView */,
 				A759909C27F5FA350046E9A2 /* CardList */,
@@ -107,6 +112,7 @@
 			children = (
 				A75990A927F733ED0046E9A2 /* ThumbsButton.swift */,
 				A75990AE27F73FB60046E9A2 /* FormQuestions.swift */,
+				A784CFAE28169577006D9D14 /* LoginButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -157,6 +163,14 @@
 				A767960727EE16920031C694 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A784CFAB2816930F006D9D14 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A784CFAC28169324006D9D14 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A7FD100E2812A910002F172F /* Services */ = {
@@ -252,11 +266,13 @@
 				A759909727F5F7610046E9A2 /* CardRepository.swift in Sources */,
 				A7FD10102812A932002F172F /* AuthenticationService.swift in Sources */,
 				A75990AA27F733ED0046E9A2 /* ThumbsButton.swift in Sources */,
+				A784CFAD28169324006D9D14 /* LoginView.swift in Sources */,
 				A75990AD27F73EB10046E9A2 /* NewCardForm.swift in Sources */,
 				A767960127EE16900031C694 /* CloudcardsApp.swift in Sources */,
 				A75990A727F6DEDE0046E9A2 /* CardListView.swift in Sources */,
 				A759909A27F5F91C0046E9A2 /* Cards.swift in Sources */,
 				A75990AF27F73FB60046E9A2 /* FormQuestions.swift in Sources */,
+				A784CFAF28169577006D9D14 /* LoginButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

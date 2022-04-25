@@ -12,6 +12,7 @@ struct CardListView: View {
     @ObservedObject var viewModel: CardListViewModel
     
     @State var showForm = false
+    @State var showLoginView = false
     
     var body: some View {
         
@@ -29,6 +30,15 @@ struct CardListView: View {
         .sheet(isPresented: $showForm) {
             NewCardForm(cardListViewModel: CardListViewModel())
           }
+        .fullScreenCover(isPresented: $showLoginView) {
+            LoginView()
+        }
+        .onAppear {
+            showLoginView = viewModel.user == nil ? true : false
+        }
+        .onChange(of: viewModel.user) { user in
+            showLoginView = user == nil ? true : false
+        }
         .navigationTitle("Tolkien trivia")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
