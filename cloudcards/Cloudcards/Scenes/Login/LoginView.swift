@@ -36,7 +36,7 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("Password")
-                    TextField("Enter a password", text: $password)
+                    SecureField("Enter a password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.default)
                 }
