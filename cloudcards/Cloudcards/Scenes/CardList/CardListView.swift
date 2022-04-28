@@ -17,21 +17,22 @@ struct CardListView: View {
     var body: some View {
         
         VStack {
+            
             ScrollView(showsIndicators: false) {
                 
-            ForEach(viewModel.cardViewModels) { cardViewModel in
-                
-                CardView(viewModel: cardViewModel)
-                    .padding([.vertical])
+                ForEach(viewModel.cardViewModels) { cardViewModel in
+                    
+                    CardView(viewModel: cardViewModel)
+                        .padding([.vertical])
                 }
                 Spacer()
             }
         }
         .sheet(isPresented: $showForm) {
             NewCardForm(cardListViewModel: CardListViewModel())
-          }
+        }
         .fullScreenCover(isPresented: $showLoginView) {
-            LoginView()
+            LoginView(cardListViewModel: CardListViewModel())
         }
         .onAppear {
             showLoginView = viewModel.user == nil ? true : false
@@ -39,7 +40,7 @@ struct CardListView: View {
         .onChange(of: viewModel.user) { user in
             showLoginView = user == nil ? true : false
         }
-        .navigationTitle("Tolkien trivia")
+        .navigationTitle("Study cards")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             
@@ -53,9 +54,26 @@ struct CardListView: View {
                     Image(systemName: "plus")
                 }
             }
+            
+            ToolbarItem(placement: .navigationBarLeading) {
+                
+                Menu {
+                    
+                    if let email = viewModel.user?.email {
+                        Text(email)
+                        
+                        Button("Sign Out", action: AuthenticationService.signOutUser)
+                    }
+                }
+            label: {
+                
+                Image(systemName: "person.fill")
+            }
+            }
         }
     }
 }
+
 
 struct CardListView_Previews: PreviewProvider {
     

@@ -39,5 +39,16 @@ class CardListViewModel: ObservableObject {
         
         cardRepository.add(card)
     }
+    
+    func addStarterCards() {
+        
+        let cards = [
+            Card(question: "This is an example card", answer: "This is the right answer. Self evaluate with the thumbs")
+        ]
+        
+        cards.forEach { card in
+            cardRepository.add(card)
+        }
+    }
 }
     

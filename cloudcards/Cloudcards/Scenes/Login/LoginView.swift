@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @ObservedObject var cardListViewModel: CardListViewModel
+    
     @State var email = ""
     @State var password = ""
     @Environment(\.isEnabled) var isEnabled
@@ -44,12 +46,28 @@ struct LoginView: View {
             VStack {
                 
                 Button {
-                    // TODO: Sign In
+                    
+                    AuthenticationService.signIn(email: email, password: password) { _, error in
+                        
+                        // TODO: Handle error
+                    }
                 }
             label: { LoginButton(buttonText: "Sign In", color: Color.blue) }
                 
                 Button {
-                    // TODO: Add New User
+                    
+                    AuthenticationService.addNewUser(email: email, password: password) { authResult, error in
+                        if let error = error {
+                            
+                            // TODO: Handle error
+                        } else {
+                            
+                            if let userInfo = authResult?.additionalUserInfo, userInfo.isNewUser {
+                                
+                                cardListViewModel.addStarterCards()
+                            }
+                        }
+                    }
                 }
             label: { LoginButton(buttonText: "Sign Up", color: Color.gray) }
             }
@@ -62,6 +80,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(cardListViewModel: CardListViewModel())
     }
 }
