@@ -13,6 +13,15 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @State var showAlert = false
+    @State var errorDescription: String?
+    
+    private func showError(error: Error) {
+        
+        errorDescription = error.localizedDescription
+        showAlert = true
+    }
+    
     @Environment(\.isEnabled) var isEnabled
     
     var body: some View {
@@ -49,7 +58,10 @@ struct LoginView: View {
                     
                     AuthenticationService.signIn(email: email, password: password) { _, error in
                         
-                        // TODO: Handle error
+                        if let error = error {
+                            
+                            showError(error: error)
+                        }
                     }
                 }
             label: { LoginButton(buttonText: "Sign In", color: Color.blue) }
@@ -57,9 +69,10 @@ struct LoginView: View {
                 Button {
                     
                     AuthenticationService.addNewUser(email: email, password: password) { authResult, error in
+                        
                         if let error = error {
                             
-                            // TODO: Handle error
+                            showError(error: error)
                         } else {
                             
                             if let userInfo = authResult?.additionalUserInfo, userInfo.isNewUser {
@@ -71,10 +84,14 @@ struct LoginView: View {
                 }
             label: { LoginButton(buttonText: "Sign Up", color: Color.gray) }
             }
+            .disabled(email.isEmpty || password.count < 6)
             
             Spacer()
         }
         .padding()
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(errorDescription ?? "🙈"))
+        }
     }
 }
 
