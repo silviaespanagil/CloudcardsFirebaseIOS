@@ -13,6 +13,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @State var showPassword = false
     @State var showAlert = false
     @State var errorDescription: String?
     
@@ -45,9 +46,27 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     Text("Password")
-                    SecureField("Enter a password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.default)
+                    
+                    HStack {
+                        
+                        if self.showPassword {
+                            
+                            TextField("Enter a password", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.default)
+                        } else {
+                            
+                            SecureField("Enter a password", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.default)
+                        }
+                        Button(action: {
+                            
+                            self.showPassword.toggle()
+                        }) {
+                            Image(systemName: self.showPassword ? "eye.fill" : "eye.slash.fill")
+                        }
+                    }
                 }
             }
             .padding(.bottom)
